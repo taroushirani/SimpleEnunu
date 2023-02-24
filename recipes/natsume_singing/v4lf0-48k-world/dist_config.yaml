@@ -1,0 +1,7 @@
+model_name: SimpleEnunu_夏目悠李_NNSVS_WORLD_v4
+version: 0.0.1
+description: SimpleEnunu用の夏目悠李歌声モデル(NNSVS-WORLD v4)
+image: natsumeyuuri.bmp
+author: ATSUYA
+web: https://github.com/taroushirani/SimpleEnunu
+extra_files_list: ["~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/通常","~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/おまけ"]

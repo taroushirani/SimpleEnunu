@@ -1,0 +1,8 @@
+# coding: utf-8
+model_name: SimpleENUNU_おふとんP_NNSVS_WORLD_v4
+version: 0.0.1
+description: SimpleEnunu用のおふとんP歌声モデル(NNSVS-WORLD v4)
+image: makura.bmp
+author: おふとんP
+web: https://github.com/taroushirani/SimpleEnunu
+extra_files_list: ["~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/通常","~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/おまけ"]

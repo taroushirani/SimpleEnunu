@@ -1,0 +1,4 @@
+name={{release_name}}
+image={{image}}
+author={{author}}
+web={{web}}

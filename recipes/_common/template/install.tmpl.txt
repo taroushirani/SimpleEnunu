@@ -1,0 +1,4 @@
+type=voiceset
+folder={{release_dir}}
+contentsdir={{release_dir}}
+description={{description}}

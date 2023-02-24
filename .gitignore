@@ -6,6 +6,8 @@
 /nnsvs
 /nnsvs-master
 /nnsvs-main
+**/packed_models
+*~
 
 *.exe
 *.log
