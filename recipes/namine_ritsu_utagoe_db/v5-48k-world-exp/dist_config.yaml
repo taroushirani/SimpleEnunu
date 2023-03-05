@@ -1,0 +1,7 @@
+model_name: SimpleEnunu_波音リツ_NNSVS_WORLD_v5_SiFiGAN
+version: 0.0.1
+description: SimpleEnunu用の波音リツ歌声モデル(NNSVS-WORLD v5+SiFiGAN)
+image: ritsu.bmp
+author: カノン@2ch ニュース速報 (VIP)
+web: http://www.canon-voice.com/
+extra_files_list: ["~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/通常","~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/おまけ"]
