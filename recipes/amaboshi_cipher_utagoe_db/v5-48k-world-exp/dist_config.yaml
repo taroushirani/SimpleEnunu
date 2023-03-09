@@ -1,0 +1,7 @@
+model_name: SimpleEnunu_雨星サイファ_NNSVS_WORLD_v5_SiFiGAN
+version: 0.0.1
+description: SimpleEnunu用の雨星サイファ歌声モデル(NNSVS-WORLD v5+SiFiGAN)
+image: ciphermira.bmp
+author: ちかの
+web: https://parapluie2c56m.wixsite.com/mysite
+extra_files_list: ["~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/通常","~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/おまけ"]
