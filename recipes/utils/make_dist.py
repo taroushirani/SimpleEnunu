@@ -123,10 +123,14 @@ def main():
     template_dir = join("..", "..", "_common", "template")
     packed_models_dir = glob(join("packed_models", "*"))[0]
     logging.debug(f"packed_models_dir: {packed_models_dir}")
-    
+
     copy_packed_models(packed_models_dir, release_dir)
 
-    copy_table(table_path, release_dir)
+    table_file = glob(join("packed_models", "**", "*.table"), recursive=True)
+    if len(table_file) != 0:
+        copy_table(table_path, release_dir)
+    else:
+        logging.info(f"table_file: {table_file[0]} is found")
     
     copy_resources(resource_dir, release_dir)
 
