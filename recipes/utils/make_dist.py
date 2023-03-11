@@ -127,7 +127,8 @@ def main():
     copy_packed_models(packed_models_dir, release_dir)
 
     table_file = glob(join("packed_models", "**", "*.table"), recursive=True)
-    if len(table_file) != 0:
+    if len(table_file) == 0:
+        logging.info(f"table_file is not found.  Copying default one.")
         copy_table(table_path, release_dir)
     else:
         logging.info(f"table_file: {table_file[0]} is found")
