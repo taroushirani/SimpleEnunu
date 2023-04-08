@@ -41,18 +41,19 @@ sys.path.append(dirname(__file__))
 import enulib
 
 try:
-    import torch as _
+    import torch
 except ModuleNotFoundError:
     print('----------------------------------------------------------')
     print('初回起動ですね。')
     print('PC環境に合わせてPyTorchを自動インストールします。')
     print('インストール完了までしばらくお待ちください。')
     print('----------------------------------------------------------')
-    enulib.install_torch.ltt_install_torch(sys.executable)
+#    enulib.install_torch.ltt_install_torch(sys.executable)
+    enulib.install_torch.pip_install_torch(abspath(sys.executable))
     print('----------------------------------------------------------')
     print('インストール成功しました。')
     print('----------------------------------------------------------\n')
-    import torch as _
+    import torch
 
 # NNSVSをimportできるようにする
 if exists(join(dirname(__file__), 'nnsvs-master')):
@@ -121,7 +122,7 @@ def find_table(model_dir: str) -> str:
     if len(table_files) == 0:
         raise FileNotFoundError(f'Table file does not exist in {model_dir}.')
     elif len(table_files) > 1:
-        logging.warn(f'Multiple table files are found. : {table_files}')
+        logging.warning(f'Multiple table files are found. : {table_files}')
     logging.info(f'Using {basename(table_files[0])}')
     return table_files[0]
 
@@ -144,7 +145,7 @@ def main(path_plugin: str, path_wav: Union[str, None] = None, play_wav=True) -> 
     # ENUNU 用ではない通常のNNSVSモデルの場合
     elif packed_model_exists(voice_dir):
         model_dir = voice_dir
-        logging.warn(
+        logging.warning(
             'NNSVS model is selected. This model might be not ready for ENUNU.')
     # ENUNU<1.0.0 向けの構成のモデルな場合
     elif exists(join(voice_dir, 'enuconfig.yaml')):
@@ -194,7 +195,7 @@ def main(path_plugin: str, path_wav: Union[str, None] = None, play_wav=True) -> 
 
     # モデルを読み取る
     logging.info('Loading models')
-    engine = SPSVS(model_dir)
+    engine = SPSVS(model_dir, device="cuda" if torch.cuda.is_available() else "cpu")
     config = engine.config
 
     # UST → LAB の変換をする
@@ -212,7 +213,13 @@ def main(path_plugin: str, path_wav: Union[str, None] = None, play_wav=True) -> 
 
     # 音声を生成する
     logging.info('Generating WAV')
-    wav_data, sample_rate = engine.svs(label, vocoder_type='auto')
+    wav_data, sample_rate = engine.svs(
+        label,
+        vocoder_type="auto",
+        post_filter_type="gv",
+        force_fix_vuv=True,
+        segmented_synthesis=True,
+    )    
     # TODO: float32で出力できるようにしたい。
     logging.debug(f'{wav_data.dtype}')
     wavfile.write(path_wav, rate=sample_rate, data=wav_data)
