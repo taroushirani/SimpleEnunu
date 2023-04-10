@@ -3,6 +3,7 @@
 夏目悠李/ 男声歌声データベース (2021 年 7 月 13 日版) を NNSVS で学習させて,
 UTAU プラグイン「 SimpleEnunu 」から呼び出せるようにした歌声モデルです.  
 pitch-shift data augmentation という手法で学習データを拡張しています.
+ボコーダとして PyWORLD ではなく SiFiGAN を採用しています.
 
 UTAU エディタ上での採譜および歌詞チェック用に,
 「波音リツ音声ライブラリ単独音 Ver1.5.1Lite for UTAU 」を同梱しています.
@@ -17,7 +18,7 @@ Windows 10 / UTAU 0.4.18 / SimpleEnunu 0.1.0
 
 1. 単独音歌詞で UST を作成
 2. UST を保存
-3. 音源に「夏目悠李 (SimpleEnunu) ((NNSVS-WORLD v5+pitch-shift data augmentation+SiFiGAN) v0.0.1 」を選択
+3. 音源に「夏目悠李 (SimpleEnunu) (NNSVS-WORLD v5+pitch-shift data augmentation+SiFiGAN) v0.0.1 」を選択
 4. ノートを範囲選択し, プラグイン「 SimpleEnunu 」を起動
 5. 待機
 6. UST の保存場所の隣に WAV ファイルが生成される

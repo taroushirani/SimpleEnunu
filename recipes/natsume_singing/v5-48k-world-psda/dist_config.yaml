@@ -1,3 +1,4 @@
+# coding: utf-8
 model_name: SimpleEnunu_夏目悠李_NNSVS_WORLD_v5_PSDA_SiFiGAN
 version: 0.0.1
 description: SimpleEnunu用の夏目悠李歌声モデル(NNSVS-WORLD v5+pitch-shift data augmentation+SiFiGAN)
