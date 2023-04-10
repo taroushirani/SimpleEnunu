@@ -1,0 +1,8 @@
+# coding: utf-8
+model_name: SimpleEnunu_御丹宮くるみ_NNSVS_WORLD_v5_PSDA_HN_uSFGAN
+version: 0.0.1
+description: SimpleEnunu用の御丹宮くるみ歌声モデル(NNSVS-WORLD v5+pitch-shift data augmentation+HN-uSFGAN)
+image: oniku_kurumi.bmp
+author: 御丹宮くるみ
+web: https://github.com/taroushirani/SimpleEnunu
+extra_files_list: ["~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/通常","~/data/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/おまけ"]
